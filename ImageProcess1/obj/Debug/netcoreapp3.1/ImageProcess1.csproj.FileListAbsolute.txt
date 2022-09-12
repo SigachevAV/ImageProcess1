@@ -1,0 +1,16 @@
+C:\main\code\ImageProcess1\ImageProcess1\obj\Debug\netcoreapp3.1\ImageProcess1.csproj.AssemblyReference.cache
+C:\main\code\ImageProcess1\ImageProcess1\obj\Debug\netcoreapp3.1\ImageProcess1.Form1.resources
+C:\main\code\ImageProcess1\ImageProcess1\obj\Debug\netcoreapp3.1\ImageProcess1.csproj.GenerateResource.cache
+C:\main\code\ImageProcess1\ImageProcess1\obj\Debug\netcoreapp3.1\ImageProcess1.GeneratedMSBuildEditorConfig.editorconfig
+C:\main\code\ImageProcess1\ImageProcess1\obj\Debug\netcoreapp3.1\ImageProcess1.AssemblyInfoInputs.cache
+C:\main\code\ImageProcess1\ImageProcess1\obj\Debug\netcoreapp3.1\ImageProcess1.AssemblyInfo.cs
+C:\main\code\ImageProcess1\ImageProcess1\obj\Debug\netcoreapp3.1\ImageProcess1.csproj.CoreCompileInputs.cache
+C:\main\code\ImageProcess1\ImageProcess1\bin\Debug\netcoreapp3.1\ImageProcess1.exe
+C:\main\code\ImageProcess1\ImageProcess1\bin\Debug\netcoreapp3.1\ImageProcess1.deps.json
+C:\main\code\ImageProcess1\ImageProcess1\bin\Debug\netcoreapp3.1\ImageProcess1.runtimeconfig.json
+C:\main\code\ImageProcess1\ImageProcess1\bin\Debug\netcoreapp3.1\ImageProcess1.runtimeconfig.dev.json
+C:\main\code\ImageProcess1\ImageProcess1\bin\Debug\netcoreapp3.1\ImageProcess1.dll
+C:\main\code\ImageProcess1\ImageProcess1\bin\Debug\netcoreapp3.1\ImageProcess1.pdb
+C:\main\code\ImageProcess1\ImageProcess1\obj\Debug\netcoreapp3.1\ImageProcess1.dll
+C:\main\code\ImageProcess1\ImageProcess1\obj\Debug\netcoreapp3.1\ImageProcess1.pdb
+C:\main\code\ImageProcess1\ImageProcess1\obj\Debug\netcoreapp3.1\ImageProcess1.genruntimeconfig.cache
