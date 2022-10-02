@@ -32,12 +32,16 @@ namespace ImageProcess1
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.фаилToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фильтрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.серыйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.блюрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.растягиваниеГистограмыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.бинаризацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пороговаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ниблэкToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.гистограмнаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +51,8 @@ namespace ImageProcess1
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.фаилToolStripMenuItem,
-            this.фильтрыToolStripMenuItem});
+            this.фильтрыToolStripMenuItem,
+            this.бинаризацияToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -66,9 +71,16 @@ namespace ImageProcess1
             // загрузитьToolStripMenuItem
             // 
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
+            // 
+            // сохранитьToolStripMenuItem
+            // 
+            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // фильтрыToolStripMenuItem
             // 
@@ -99,6 +111,37 @@ namespace ImageProcess1
             this.растягиваниеГистограмыToolStripMenuItem.Name = "растягиваниеГистограмыToolStripMenuItem";
             this.растягиваниеГистограмыToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
             this.растягиваниеГистограмыToolStripMenuItem.Text = "Растягивание гистограмы";
+            this.растягиваниеГистограмыToolStripMenuItem.Click += new System.EventHandler(this.растягиваниеГистограмыToolStripMenuItem_Click);
+            // 
+            // бинаризацияToolStripMenuItem
+            // 
+            this.бинаризацияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.пороговаяToolStripMenuItem,
+            this.ниблэкToolStripMenuItem,
+            this.гистограмнаяToolStripMenuItem});
+            this.бинаризацияToolStripMenuItem.Name = "бинаризацияToolStripMenuItem";
+            this.бинаризацияToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.бинаризацияToolStripMenuItem.Text = "Бинаризация";
+            // 
+            // пороговаяToolStripMenuItem
+            // 
+            this.пороговаяToolStripMenuItem.Name = "пороговаяToolStripMenuItem";
+            this.пороговаяToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.пороговаяToolStripMenuItem.Text = "пороговая";
+            this.пороговаяToolStripMenuItem.Click += new System.EventHandler(this.пороговаяToolStripMenuItem_Click);
+            // 
+            // ниблэкToolStripMenuItem
+            // 
+            this.ниблэкToolStripMenuItem.Name = "ниблэкToolStripMenuItem";
+            this.ниблэкToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ниблэкToolStripMenuItem.Text = "Ниблэк";
+            this.ниблэкToolStripMenuItem.Click += new System.EventHandler(this.ниблэкToolStripMenuItem_Click);
+            // 
+            // гистограмнаяToolStripMenuItem
+            // 
+            this.гистограмнаяToolStripMenuItem.Name = "гистограмнаяToolStripMenuItem";
+            this.гистограмнаяToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.гистограмнаяToolStripMenuItem.Text = "Гистограмная";
             // 
             // pictureBox1
             // 
@@ -108,13 +151,6 @@ namespace ImageProcess1
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // сохранитьToolStripMenuItem
-            // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
-            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -145,6 +181,10 @@ namespace ImageProcess1
         private System.Windows.Forms.ToolStripMenuItem растягиваниеГистограмыToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem бинаризацияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem пороговаяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ниблэкToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem гистограмнаяToolStripMenuItem;
     }
 }
 
