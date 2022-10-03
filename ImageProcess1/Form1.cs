@@ -103,19 +103,52 @@ namespace ImageProcess1
 
         private void растягиваниеГистограмыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int delta = 40;
-            Bitmap tempBitmap = new Bitmap(image.Width, image.Height);
-            for(int i = 0; i<image.Width; i++)
+            int minR = image.GetPixel(0, 0).R;
+            int minG = image.GetPixel(0, 0).G;
+            int minB = image.GetPixel(0, 0).B;
+            int maxR = image.GetPixel(0, 0).R;
+            int maxG = image.GetPixel(0, 0).G;
+            int maxB = image.GetPixel(0, 0).B;
+            for(int i =0; i<image.Width; i++)
             {
-                for(int j=0; j<image.Height; j++)
+                for(int j = 0; j<image.Height; j++)
                 {
-                    int r = image.GetPixel(i, j).R;
-                    int g = image.GetPixel(i, j).G;
-                    int b = image.GetPixel(i, j).B;
-                    r = Clamp((int)((100 * r + 128 * delta) / 100 - delta), 0, 255);
-                    g = Clamp((int)((100 * g + 128 * delta) / 100 - delta), 0, 255);
-                    b = Clamp((int)((100 * b + 128 * delta) / 100 - delta), 0, 255);
-                    tempBitmap.SetPixel(i, j, Color.FromArgb(r, g, b));
+                    int tempR = image.GetPixel(i, j).R;
+                    int tempG = image.GetPixel(i, j).G;
+                    int tempB = image.GetPixel(i, j).B;
+                    if (tempR < minR)
+                    {
+                        minR = tempR;
+                    }
+                    if (tempG < minG)
+                    {
+                        minG = tempG;
+                    }
+                    if (tempB < minB)
+                    {
+                        minB = tempB;
+                    }
+                    if (tempR > maxR)
+                    {
+                        maxR = tempR;
+                    }
+                    if (tempG > maxG)
+                    {
+                        maxG = tempG;
+                    }
+                    if (tempB > maxB)
+                    {
+                        maxB = tempB;
+                    }
+                }
+            }
+            Bitmap tempBitmap = new Bitmap(image.Width, image.Height);
+            for (int i = 0; i < image.Width; i++)
+            {
+                for (int j = 0; j < image.Height; j++)
+                {
+                    Color temp = image.GetPixel(i, j);
+                    tempBitmap.SetPixel(i, j, Color.FromArgb((int)((temp.R - minR) * 255.0 / (maxR - minR)), (int)((temp.G - minG) * 255.0 / (maxG - minG)), (int)((temp.B - minB) * 255.0 / (maxB - minB))));
                 }
             }
             image = tempBitmap;
@@ -145,7 +178,7 @@ namespace ImageProcess1
         {
             ToGray();
             Bitmap tempBitmap = new Bitmap(image.Width, image.Height);
-            for (int i = 0; i<image.Height; i++)
+            for (int i = 0; i<image.Width; i++)
             {
                 for(int j = 0; j<image.Height; j++)
                 {
@@ -172,25 +205,79 @@ namespace ImageProcess1
             {
                 for(int j = 0; j<image.Height; j++)
                 {
+                    int n = 20;
                     int mid = 0;
-                    int midS = 0;
-                    int midST = 0;
-                    for (int l = -3/2; l<3/2; l++)
+                    float midS = 0;
+                    for (int l = -n/2; l<n/2; l++)
                     {
-                        for(int k = -3/2; k<3/2; k++)
+                        for(int k = -n/2; k<n/2; k++)
                         {
                             if ((0 < i + l) || (i + l < image.Width) || (0 < j + k) || (j + k < image.Height))
                             {
                                 continue;
                             }
                             Color nearColor = image.GetPixel(i+l, j+k);
-                            mid += nearColor.R*1/9;
-                            midS += (int)Math.Pow(nearColor.R, 2);
-                            midST += nearColor.R;
+                            mid += nearColor.R;
                         }
                     }
-                    midS = (int)Math.Sqrt((midS-mid*midST+Math.Pow(mid,2))/9);
+                    mid = mid  / (n * n);
+                    for (int l = -n / 2; l < n / 2; l++)
+                    {
+                        for(int k = -n / 2; k < n / 2; k++)
+                        {
+                            if ((0 < i + l) || (i + l < image.Width) || (0 < j + k) || (j + k < image.Height))
+                            {
+                                continue;
+                            }
+                            Color nearColor = image.GetPixel(i + l, j + k);
+                            midS += (float)Math.Pow(nearColor.R, 2);
+                        }
+                    }
+                    midS = (float)Math.Sqrt(midS / (n*n) - mid*mid);
                     if(image.GetPixel(i, j).R < (int)(mid-0.2f*midS))
+                    {
+                        tempBitmap.SetPixel(i, j, Color.FromArgb(0, 0, 0));
+                    }
+                    else
+                    {
+                        tempBitmap.SetPixel(i, j, Color.FromArgb(255, 255, 255));
+                    }
+                }
+            }
+            image = tempBitmap;
+            pictureBox1.Image = tempBitmap;
+            pictureBox1.Refresh();
+        }
+
+        private void гистограмнаяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToGray();
+            int[] gist = new int[256];
+            for(int i = 0; i<256; i++)
+            {
+                gist[i] = 0;
+            }
+            for(int i = 0; i<image.Width; i++)
+            {
+                for(int j =0; j<image.Height; j++)
+                {
+                    gist[image.GetPixel(i, j).R]++;
+                }
+            }
+            int sum = 0;
+            int sumV = 0;
+            for(int i = (int)(0+256*0.05f); i< (int)(256 - 256 * 0.05f); i++)
+            {
+                sum += i;
+                sumV += i * gist[i];
+            }
+            int T =(int)(sumV / (sum * (256 - 256 * 0.1f)));
+            Bitmap tempBitmap = new Bitmap(image.Width, image.Height);
+            for (int i = 0; i < image.Width; i++)
+            {
+                for (int j = 0; j < image.Height; j++)
+                {
+                    if (image.GetPixel(i, j).R < T)
                     {
                         tempBitmap.SetPixel(i, j, Color.FromArgb(0, 0, 0));
                     }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\main\\code\\ImageProcess1\\ImageProcess1\\ImageProcess1.csproj",
+      "projectUniqueName": "D:\\code\\ImageProcess1\\ImageProcess1\\ImageProcess1.csproj",
       "projectName": "ImageProcess1",
-      "projectPath": "C:\\main\\code\\ImageProcess1\\ImageProcess1\\ImageProcess1.csproj",
+      "projectPath": "D:\\code\\ImageProcess1\\ImageProcess1\\ImageProcess1.csproj",
       "packagesPath": "C:\\Users\\ton66\\.nuget\\packages\\",
-      "outputPath": "C:\\main\\code\\ImageProcess1\\ImageProcess1\\obj\\",
+      "outputPath": "D:\\code\\ImageProcess1\\ImageProcess1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ton66\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
