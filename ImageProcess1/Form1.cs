@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -289,6 +290,34 @@ namespace ImageProcess1
             }
             image = tempBitmap;
             pictureBox1.Image = tempBitmap;
+            pictureBox1.Refresh();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void равномерныйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitmap res = new Bitmap(image.Width, image.Height);
+            float v = 0.04f;
+            Random random= new Random();
+            float sDev = (float)Math.Sqrt(v);
+            for (int i = 0; i<image.Width; i++)
+            {
+                for(int j = 0; j<image.Height; j++)
+                {
+                    float noise = (float)(random.NextDouble() - 0.5f) * 2 * sDev;
+                    int r = Clamp((int)(image.GetPixel(i, j).R + noise * image.GetPixel(i, j).R), 0, 255);
+                    int g = Clamp((int)(image.GetPixel(i, j).G + noise * image.GetPixel(i, j).G), 0, 255);
+                    int b = Clamp((int)(image.GetPixel(i, j).B + noise * image.GetPixel(i, j).B), 0, 255);
+                    res.SetPixel(i, j, Color.FromArgb(r, g, b));
+                }
+            }
+
+            image = res;
+            pictureBox1.Image = res;
             pictureBox1.Refresh();
         }
     }
