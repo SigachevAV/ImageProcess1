@@ -1,0 +1,13 @@
+C:\Users\ton66\Documents\GitHub\ImageProcess2\ImageProcess2\bin\Debug\ImageProcess2.exe.config
+C:\Users\ton66\Documents\GitHub\ImageProcess2\ImageProcess2\bin\Debug\ImageProcess2.exe
+C:\Users\ton66\Documents\GitHub\ImageProcess2\ImageProcess2\bin\Debug\ImageProcess2.pdb
+C:\Users\ton66\Documents\GitHub\ImageProcess2\ImageProcess2\obj\Debug\ImageProcess2.csproj.AssemblyReference.cache
+C:\Users\ton66\Documents\GitHub\ImageProcess2\ImageProcess2\obj\Debug\ImageProcess2.csproj.SuggestedBindingRedirects.cache
+C:\Users\ton66\Documents\GitHub\ImageProcess2\ImageProcess2\obj\Debug\ImageProcess2.Properties.Resources.resources
+C:\Users\ton66\Documents\GitHub\ImageProcess2\ImageProcess2\obj\Debug\ImageProcess2.csproj.GenerateResource.cache
+C:\Users\ton66\Documents\GitHub\ImageProcess2\ImageProcess2\obj\Debug\ImageProcess2.csproj.CoreCompileInputs.cache
+C:\Users\ton66\Documents\GitHub\ImageProcess2\ImageProcess2\obj\Debug\ImageProcess2.exe
+C:\Users\ton66\Documents\GitHub\ImageProcess2\ImageProcess2\obj\Debug\ImageProcess2.pdb
+C:\Users\ton66\Documents\GitHub\ImageProcess2\ImageProcess2\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+C:\Users\ton66\Documents\GitHub\ImageProcess2\ImageProcess2\obj\Debug\ImageProcess2.Hist.resources
+C:\Users\ton66\Documents\GitHub\ImageProcess2\ImageProcess2\obj\Debug\ImageProcess2.csproj.CopyComplete
