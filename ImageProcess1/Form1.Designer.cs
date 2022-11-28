@@ -41,7 +41,6 @@ namespace ImageProcess1
             this.пороговаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ниблэкToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.гистограмнаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.шумToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.равномерныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +48,11 @@ namespace ImageProcess1
             this.снятиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.гаусаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.билатеральныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.анализToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sSIMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pSNRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -154,22 +158,12 @@ namespace ImageProcess1
             this.гистограмнаяToolStripMenuItem.Text = "Гистограмная";
             this.гистограмнаяToolStripMenuItem.Click += new System.EventHandler(this.гистограмнаяToolStripMenuItem_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(17, 46);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1164, 610);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // шумToolStripMenuItem
             // 
             this.шумToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьToolStripMenuItem,
-            this.снятиеToolStripMenuItem});
+            this.снятиеToolStripMenuItem,
+            this.анализToolStripMenuItem});
             this.шумToolStripMenuItem.Name = "шумToolStripMenuItem";
             this.шумToolStripMenuItem.Size = new System.Drawing.Size(76, 34);
             this.шумToolStripMenuItem.Text = "Шум";
@@ -195,6 +189,7 @@ namespace ImageProcess1
             this.гаммаToolStripMenuItem.Name = "гаммаToolStripMenuItem";
             this.гаммаToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.гаммаToolStripMenuItem.Text = "Гамма";
+            this.гаммаToolStripMenuItem.Click += new System.EventHandler(this.гаммаToolStripMenuItem_Click);
             // 
             // снятиеToolStripMenuItem
             // 
@@ -210,12 +205,56 @@ namespace ImageProcess1
             this.гаусаToolStripMenuItem.Name = "гаусаToolStripMenuItem";
             this.гаусаToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.гаусаToolStripMenuItem.Text = "Гауса";
+            this.гаусаToolStripMenuItem.Click += new System.EventHandler(this.гаусаToolStripMenuItem_Click);
             // 
             // билатеральныйToolStripMenuItem
             // 
             this.билатеральныйToolStripMenuItem.Name = "билатеральныйToolStripMenuItem";
             this.билатеральныйToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.билатеральныйToolStripMenuItem.Text = "Билатеральный";
+            this.билатеральныйToolStripMenuItem.Click += new System.EventHandler(this.билатеральныйToolStripMenuItem_Click);
+            // 
+            // анализToolStripMenuItem
+            // 
+            this.анализToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sSIMToolStripMenuItem,
+            this.pSNRToolStripMenuItem,
+            this.gistToolStripMenuItem});
+            this.анализToolStripMenuItem.Name = "анализToolStripMenuItem";
+            this.анализToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.анализToolStripMenuItem.Text = "Анализ";
+            // 
+            // sSIMToolStripMenuItem
+            // 
+            this.sSIMToolStripMenuItem.Name = "sSIMToolStripMenuItem";
+            this.sSIMToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.sSIMToolStripMenuItem.Text = "SSIM";
+            this.sSIMToolStripMenuItem.Click += new System.EventHandler(this.sSIMToolStripMenuItem_Click);
+            // 
+            // pSNRToolStripMenuItem
+            // 
+            this.pSNRToolStripMenuItem.Name = "pSNRToolStripMenuItem";
+            this.pSNRToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.pSNRToolStripMenuItem.Text = "PSNR";
+            this.pSNRToolStripMenuItem.Click += new System.EventHandler(this.pSNRToolStripMenuItem_Click);
+            // 
+            // gistToolStripMenuItem
+            // 
+            this.gistToolStripMenuItem.Name = "gistToolStripMenuItem";
+            this.gistToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.gistToolStripMenuItem.Text = "Gist";
+            this.gistToolStripMenuItem.Click += new System.EventHandler(this.gistToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(17, 46);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1164, 610);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form1
             // 
@@ -258,6 +297,10 @@ namespace ImageProcess1
         private System.Windows.Forms.ToolStripMenuItem снятиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem гаусаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem билатеральныйToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem анализToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sSIMToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pSNRToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gistToolStripMenuItem;
     }
 }
 
